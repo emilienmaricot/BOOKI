@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
     <title>BOOKI</title>
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
     <script src="https://kit.fontawesome.com/cd08c719ac.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,7 +26,7 @@
         </nav>
     </header>
     <main>
-        <section>
+        <section id="bloc_titre">
             <div id="titre">
                 <h1>Trouvez votre hébergement pour des vacances de rêve</h1>
                 <p>En plein centre ville ou en pleine nature</p>
@@ -41,18 +42,19 @@
             <div id="filtre">
                 <form id="bouton_filtre" method="post">
                     <p>Filtres</p>
-                    <button class="bouton" type="submit" name="filtres" id="eco"><i class="fas fa-money-bill-wave"
-                            style="font-size: 20px"></i><span>Économique</span></button>
-                    <button class="bouton" type="submit" name="filtres" id="family"><i class="fas fa-child"
-                            style="font-size: 23px"></i>Familial</button>
-                    <button class="bouton" type="submit" name="filtres" id="coeur"><i class="fas fa-heart"
-                            style="font-size: 23px"></i>Romantique</button>
-                    <button class="bouton" type="submit" name="filtres" id="dog"><i class="fas fa-dog"
-                            style="font-size: 24px"></i>Animaux
-                        autorisés</button>
+                    <button class="bouton" type="submit" name="filtres"><i
+                            class="fas fa-money-bill-wave"></i><span>Économique</span></button>
+                    <button class="bouton" type="submit" name="filtres"><i
+                            class="fas fa-child"></i><span>Familial</span></button>
+                    <button class="bouton" type="submit" name="filtres"><i
+                            class="fas fa-heart"></i><span>Romantique</span></button>
+                    <button class="bouton" type="submit" name="filtres"><i class="fas fa-dog"></i><span>Animaux
+                            autorisés</span></button>
                 </form>
-                <p><i id="info" class="fas fa-info-circle"></i>
-                    Plus de 500 logements sont disponibles dans cette ville</p>
+                <div id="info">
+                    <i class="fas fa-info"></i>
+                    <p>Plus de 500 logements sont disponibles dans cette ville</p>
+                </div>
             </div>
         </section>
         <section id="hebergement">
@@ -68,7 +70,7 @@
                             <p>Nuit à partir de 25€</p>
                             <div class="star" style="font-size: 11px;"><i class="fas fa-star"></i><i
                                     class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i></div>
+                                    style="color:grey;" class="fas fa-star"></i></div>
                         </a>
                     </div>
                     <div class="card">
@@ -91,8 +93,8 @@
                             <h3>Hôtel Les mouettes</h3>
                             <p>Nuit à partir de 76€</p>
                             <div class="star" style="font-size: 11px;"><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i></div>
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star check"></i>
+                            </div>
                         </a>
                     </div>
                     <div class="card">
@@ -103,8 +105,8 @@
                             <h3>Hôtel de la mer</h3>
                             <p>Nuit à partir de 46€</p>
                             <div class="star" style="font-size: 11px;"><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i></div>
+                                    class="fas fa-star"></i><i class="fas fa-star"></i><i style="color:grey;"
+                                    class="fas fa-star"></i><i style="color:grey;" class="fas fa-star"></i></div>
                         </a>
                     </div>
                     <div class="card">
@@ -116,7 +118,7 @@
                             <p>Nuit à partir de 23€</p>
                             <div class="star" style="font-size: 11px;"><i class="fas fa-star"></i><i
                                     class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                    class="fas fa-star"></i></div>
+                                    style="color:grey;" class="fas fa-star"></i></div>
                         </a>
                     </div>
                     <div class="card">
@@ -163,7 +165,7 @@
                                 <p>Nuit à partir de 71€</p>
                                 <div class="star" style="font-size: 11px;"><i class="fas fa-star"></i><i
                                         class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                        class="fas fa-star"></i></div>
+                                        style="color:grey;" class="fas fa-star"></i></div>
                             </div>
                         </a>
                     </div>
@@ -178,7 +180,7 @@
                                 <p>Nuit à partir de 68€</p>
                                 <div class="star" style="font-size: 11px;"><i class="fas fa-star"></i><i
                                         class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                        class="fas fa-star"></i></div>
+                                        style="color:grey;" class="fas fa-star"></i></div>
                             </div>
                         </a>
                     </div>
@@ -196,43 +198,63 @@
                         <h3>Vieux port</h3>
                     </a>
                 </div>
-                <div class="card">
+                <div class="card_moyenne">
                     <a href="#">
                         <div class="img_card"><img src="images/activites/3_medium/paul-hermann-QFTrLdQIRhI-unsplash.jpg"
-                                alt="Fort de Pomègue" class="photo_card_activité"></div>
+                                alt="Fort de Pomègue" class="photo_card_moyenne"></div>
                         <h3>Fort de Pomègues</h3>
                     </a>
                 </div>
                 <div class="card">
                     <a href="#">
-                        <div class="img_card"><img src="images/activites/3_medium/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg"
-                                alt="Île du Frioul" class="photo_card_activité"></div>
-                        <h3>Île du Frioul</h3>
-                    </a>
-                </div>
-                <div class="card">
-                    <a href="#">
-                        <div class="img_card"><img src="images/activites/3_medium/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg"
+                        <div class="img_card"><img
+                                src="images/activites/3_medium/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg"
                                 alt="Parc National des Calanques" class="photo_card_activité"></div>
                         <h3>Parc National des Calanques</h3>
                     </a>
                 </div>
-                <div class="card">
+                <div class="card_petite">
                     <a href="#">
-                        <div class="img_card"><img src="images/activites/3_medium/florian-wehde-xW9e8gdotxI-unsplash.jpg"
-                                alt="Notre-Dame-de-la-Garde" class="photo_card_activité"></div>
+                        <div class="img_card"><img
+                                src="images/activites/3_medium/florian-wehde-xW9e8gdotxI-unsplash.jpg"
+                                alt="Notre-Dame-de-la-Garde" class="photo_card_petite"></div>
                         <h3>Notre-Dame-de-la-Garde</h3>
                     </a>
                 </div>
-                <div class="card">
+                <div class="card_petite">
+                    <a href="#">
+                        <div class="img_card"><img src="images/activites/3_medium/kevin-hikari-rV_Qd1l-VXg-unsplash.jpg"
+                                alt="Île du Frioul" class="photo_card_petite"></div>
+                        <h3>Île du Frioul</h3>
+                    </a>
+                </div>
+                <div class="card_moyenne">
                     <a href="#">
                         <div class="img_card"><img src="images/activites/3_medium/lena-paulin-wH2-EJoDcV0-unsplash.jpg"
-                                alt="Parc Longchamp" class="photo_card_activité"></div>
+                                alt="Parc Longchamp" class="photo_card_moyenne"></div>
                         <h3>Parc Longchamp</h3>
                     </a>
                 </div>
             </div>
         </section>
+        <footer>
+            <ul>
+                <h3>A propos</h3>
+                <li><a href="#">Fonctionnement du site</a></li>
+                <li><a href="#">Conditions générales de vente</a></li>
+                <li><a href="#">Données et confidentialité</a></li>
+            </ul>
+            <ul>
+                <h3>Nos hébergements</h3>
+                <li><a href="#">Charte qualité</a></li>
+                <li><a href="#">Soumettre votre hôtel</a></li>
+            </ul>
+            <ul>
+                <h3>Assistance</h3>
+                <li><a href="#">Centre d'aide</a></li>
+                <li><a href="#">Nous contacter</a></li>
+            </ul>
+        </footer>
     </main>
 
 </body>
